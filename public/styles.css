@@ -1,72 +1,94 @@
-/* import fonts or other imports rules */
+/* style.css */
 
-/* to-do
-1 ) add hover effect to all buttons
-2 ) add a Google font 
-*/
+/* Import a Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
-:root{
-    --bg-color: #f0f0f0;
-    --box-shadow: rgba(0,0,0,0.1);
-    --display-btn:  #4CAF50;
-    --delete-btn: #f44336;
-    --submit-btn: #2196F3;
-  }
-  
-  *{
-    margin:0;
-    padding:0;
-  }
-  
-  body {
-      font-family: Arial, sans-serif;
-      padding: 20px;
-      background-color: var(--bg-color)
-    }
-    
-    .container {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-      max-width: 35rem;
-      margin: 0 auto;
-    }
-    
-    .block {
-      background: #fff;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px var(--box-shadow);
-    }
-    
-    button {
-      padding: 10px;
-      margin-top: 10px;
-      cursor: pointer;
-      border: none;
-      border-radius: 4px;
-    }
-    
-    #displayTodos {
-      background-color: var(--display-btn);
-      color: white;
-    }
-    
-    #submitTodo {
-      background-color: var(--submit-btn);
-      color: white;
-    }
-    
-    #deleteTodo {
-      background-color: var(--delete-btn);
-      color: white;
-    }
-    
-    input {
-      display: block;
-      margin: 5px 0;
-      padding: 8px;
-      width: 100%;
-      box-sizing: border-box;
-    }
-    
+:root {
+  --bg-color: #f9f9f9;
+  --box-shadow-color: rgba(0, 0, 0, 0.1);
+  --display-btn: #4CAF50;
+  --submit-btn: #2196F3;
+  --delete-btn: #f44336;
+  --btn-hover-brightness: 1.1;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--bg-color);
+  padding: 20px;
+  min-height: 100vh;
+}
+
+/* Center everything */
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Reusable block style */
+.block {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px var(--box-shadow-color);
+}
+
+/* Button styles */
+button {
+  padding: 10px;
+  width: 100%;
+  margin-top: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #fff;
+}
+
+/* Individual Button Colors */
+#displayTodos {
+  background-color: var(--display-btn);
+}
+
+#submitTodo {
+  background-color: var(--submit-btn);
+}
+
+#deleteTodo {
+  background-color: var(--delete-btn);
+}
+
+/* Hover Effects */
+button:hover {
+  filter: brightness(var(--btn-hover-brightness));
+}
+
+/* Input styles */
+input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+/* Preformatted text */
+#todoDisplay {
+  background: #f0f0f0;
+  padding: 15px;
+  border-radius: 8px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  font-size: 0.95rem;
+}
